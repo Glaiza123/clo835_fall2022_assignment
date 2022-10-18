@@ -34,7 +34,7 @@ jobs:
         
         #Docker build
         docker build -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker build -f Dockerfile_mysql -t $ECR_RESITRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker build -f Dockerfile_mysql -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
 
         #Unit test
         docker run -d -p 80:8080 --name my_app $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
