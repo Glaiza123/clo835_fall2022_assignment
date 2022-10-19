@@ -49,6 +49,6 @@ jobs:
         #Docker build
         docker build -f Dockerfile_mysql -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
 
-        
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        
         
