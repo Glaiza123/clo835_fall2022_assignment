@@ -1,7 +1,7 @@
 
 
 #----------------------------------------------------------
-# ACS730 - Week 3 - Terraform Introduction
+# CLO835 - Assignment1
 #
 # Build EC2 Instances
 #
@@ -21,7 +21,6 @@ data "aws_ami" "latest_amazon_linux" {
     values = ["amzn2-ami-hvm-*-x86_64-gp2"]
   }
 }
-
 
 # Data source for availability zones in us-east-1
 data "aws_availability_zones" "available" {
@@ -112,7 +111,15 @@ resource "aws_eip" "static_eip" {
 }
 
 #ECR
-  resource "aws_ecr_repository" "foo" {
+  resource "aws_ecr_repository" "web" {
+  name = "glaiza_ecr"
+  image_tag_mutability = "MUTABLE"
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
+  
+  resource "aws_ecr_repository" "mysql" {
   name = "glaiza_ecr"
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
