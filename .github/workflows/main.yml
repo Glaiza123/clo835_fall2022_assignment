@@ -32,7 +32,7 @@ jobs:
     - name: Build, test, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: glaiza_ecr
+        ECR_REPOSITORY: web_ecr
         IMAGE_TAG: v0.1
       run: |
 
@@ -44,7 +44,7 @@ jobs:
     - name: Build, test, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: glaiza_ecr
+        ECR_REPOSITORY: mysql_ecr
         IMAGE_TAG: v1.0
       run: |
         
